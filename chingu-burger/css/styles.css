@@ -466,4 +466,116 @@ object-fit: cover;
 margin: 0 auto;
 border-radius: 12px;
 }
+/* =====================================
+GRID PRINCIPAL - MOBILE FIRST
+===================================== */
 
+/* En celulares, las secciones se apilan */
+.home-grid {
+display: grid;
+grid-template-areas:
+"bienvenida"
+"resumen"
+"pedido";
+grid-template-columns: minmax(0, 1fr);
+gap: 24px;
+width: min(1100px, 92%);
+margin: 0 auto;
+padding: 24px 0;
+}
+
+/* Asignación de áreas */
+.bienvenida {
+grid-area: bienvenida;
+}
+
+.resumen-menu {
+grid-area: resumen;
+}
+
+.pedido {
+grid-area: pedido;
+}
+
+/* Espaciado interno de las secciones */
+.home-grid > section {
+min-width: 0;
+padding: 20px;
+margin: 0;
+border-radius: 12px;
+}
+
+/* Fondo de las secciones secundarias */
+.resumen-menu,
+.pedido {
+background-color: #FFFFFF;
+border: 1px solid #E8DED1;
+}
+
+/* Imágenes fluidas */
+.home-grid img {
+max-width: 100%;
+height: auto;
+}
+
+/* =====================================
+DESKTOP - DESDE 1024 PX
+===================================== */
+
+@media (min-width: 1024px) {
+.home-grid {
+grid-template-areas:
+"bienvenida bienvenida"
+"resumen pedido";
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 32px;
+padding: 40px 0;
+}
+
+.home-grid > .bienvenida {
+    text-align: center;
+}
+
+}
+/* =====================================
+GRID DE HAMBURGUESAS
+===================================== */
+
+/* Mobile-first: una columna */
+.menu-flex {
+display: grid;
+grid-template-areas:
+"clasica"
+"bacon"
+"completa";
+grid-template-columns: minmax(0, 1fr);
+gap: 24px;
+align-items: stretch;
+}
+
+/* Cada tarjeta ocupa el ancho disponible */
+.menu-flex article {
+min-width: 0;
+width: 100%;
+}
+
+/* Desktop: tres columnas flexibles */
+@media (min-width: 1024px) {
+.menu-flex {
+grid-template-areas:
+"clasica bacon completa";
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 24px;
+}
+}
+.hamburguesa-clasica {
+    grid-area: clasica;
+}
+
+.hamburguesa-bacon {
+    grid-area: bacon;
+}
+
+.hamburguesa-completa {
+    grid-area: completa;
+}
