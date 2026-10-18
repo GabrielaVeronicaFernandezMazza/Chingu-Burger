@@ -52,7 +52,7 @@ Enlaces
 
 Repositorio: https://github.com/GabrielaVeronicaFernandezMazza/Chingu-Burger
 
-Sitio web publicado:https://github.com/GabrielaVeronicaFernandezMazza/Chingu-Burger/tree/main/chingu-burger/pages
+Sitio web publicado: https://gabrielaveronicafernandezmazza.github.io/Chingu-Burger/
 
 Autoría
 
