@@ -1,530 +1,432 @@
-
-/* 1. Fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
-
-/* 2. Variables y reset */
-:root {
-    --color-primario: #24201E;
-    --color-secundario: #F5EFE6;
-    --color-acento: #D97736;
-    --color-texto: #292522;
-    --color-blanco: #FFFFFF;
-    --color-borde: #E8DED1;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--color-secundario);
-    color: var(--color-texto);
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 h1,
 h2,
 h3 {
-    font-family: 'Oswald', sans-serif;
-    line-height: 1.2;
+  font-family: "Oswald", sans-serif;
+  line-height: 1.2;
 }
 
 h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 700;
 }
 
 h2 {
-    color: var(--color-primario);
-    font-size: 2rem;
-    font-weight: 600;
+  color: #24201E;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 h3 {
-    color: #A84716;
-    font-size: 1.5rem;
-    font-weight: 500;
+  color: #A84716;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-/* 3. Encabezado */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 24px 5%;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header h1 {
-    margin: 0;
-    color: var(--color-blanco);
+body {
+  background-color: #F5EFE6;
+  color: #292522;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Navegación actual: se adaptará al Navbar de Bootstrap */
-header nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    list-style: none;
-}
-
-header nav a {
-    display: inline-block;
-    padding: 10px 12px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    background-color: var(--color-acento);
-    color: var(--color-blanco);
-    text-decoration: none;
-    transition: background-color 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-primario);
-    transform: translateY(-2px);
-}
-
-header nav a:focus-visible {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-header nav a:active {
-    transform: scale(0.96);
-}
-
-/* 4. Contenido general */
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    width: min(1100px, 90%);
-    margin: 0 auto;
-    padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 32px 0;
 }
-
 main section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+main a {
+  color: #A84716;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+main a:hover {
+  color: #24201E;
+}
+main a:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+main a:active {
+  opacity: 0.75;
 }
 
 article {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    min-width: 0;
-    padding: 24px;
-    border: 1px solid var(--color-borde);
-    border-radius: 14px;
-    background-color: var(--color-blanco);
-    box-shadow: 0 4px 12px rgba(36, 32, 30, 0.08);
-    transition: box-shadow 0.25s ease,
-                transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #E8DED1;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(36, 32, 30, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
-
 article:hover {
-    box-shadow: 0 8px 20px rgba(36, 32, 30, 0.14);
+  box-shadow: 0 8px 20px rgba(36, 32, 30, 0.14);
 }
-
 article:active {
-    transform: scale(0.99);
+  transform: scale(0.99);
 }
 
-main a {
-    color: #A84716;
-    font-weight: 700;
-    transition: color 0.25s ease;
-}
-
-main a:hover {
-    color: var(--color-primario);
-}
-
-main a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-main a:active,
-button:active {
-    opacity: 0.75;
-}
-
-/* 5. Imágenes y figuras */
 figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    min-width: 0;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
 }
-
 figure img {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 figcaption {
-    font-size: 0.9rem;
-    font-style: italic;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
-/* 6. Pie de página */
+button:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+
+button:active {
+  opacity: 0.75;
+}
+
+a {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+a:hover {
+  color: #D97736;
+}
+a:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 5%;
+  background-color: #24201E;
+  color: #FFFFFF;
+}
+header h1 {
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.navbar {
+  background-color: #24201E;
+  padding: 12px 5%;
+}
+.navbar .navbar-brand {
+  color: #FFFFFF;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+  color: #D97736;
+}
+.navbar .navbar-nav {
+  gap: 8px;
+}
+.navbar .nav-link {
+  color: #eeebea;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.navbar .nav-link:hover, .navbar .nav-link:focus-visible {
+  color: #ee650a;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.navbar .nav-link.active {
+  color: #D97736;
+  font-weight: 700;
+}
+.navbar .nav-link:active {
+  color: #D97736;
+}
+.navbar .navbar-toggler {
+  border-color: #E8DED1;
+}
+.navbar .navbar-toggler:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 24px 5%;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+  padding: 24px 5%;
+  background-color: #24201E;
+  color: #FFFFFF;
+  text-align: center;
+}
+footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #D97736;
+}
+footer a:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
 }
 
-/* 7. Inicio: Flexbox + CSS Grid */
+.btn {
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+
+.btn-chingu {
+  color: #FFFFFF;
+  background-color: #D97736;
+  border-color: #D97736;
+}
+.btn-chingu:hover, .btn-chingu:focus {
+  color: #D97736;
+  background-color: #24201E;
+  border-color: #D97736;
+}
+.btn-chingu:active {
+  color: #24201E;
+  background-color: #F5EFE6;
+  border-color: #D97736;
+}
+
+.menu-flex {
+  display: grid;
+  grid-template-areas: "clasica" "bacon" "completa";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.menu-flex article {
+  width: 100%;
+  min-width: 0;
+}
+.menu-flex figure {
+  gap: 12px;
+}
+.menu-flex article img {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hamburguesa-clasica {
+  grid-area: clasica;
+}
+
+.hamburguesa-bacon {
+  grid-area: bacon;
+}
+
+.hamburguesa-completa {
+  grid-area: completa;
+}
+
 .home-grid {
-    display: grid;
-    grid-template-areas:
-        "bienvenida"
-        "resumen"
-        "pedido";
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    width: min(1100px, 92%);
-    margin: 0 auto;
-    padding: 24px 0;
+  display: grid;
+  grid-template-areas: "bienvenida" "resumen" "pedido";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 24px 0;
 }
-
 .home-grid > section {
-    min-width: 0;
-    margin: 0;
-    padding: 20px;
-    border-radius: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .bienvenida {
-    grid-area: bienvenida;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
+  grid-area: bienvenida;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
 }
-
 .bienvenida p {
-    max-width: 700px;
+  max-width: 700px;
 }
-
 .bienvenida figure {
-    max-width: 600px;
+  max-width: 600px;
 }
-
 .bienvenida img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .resumen-menu {
-    grid-area: resumen;
+  grid-area: resumen;
 }
 
 .pedido {
-    grid-area: pedido;
+  grid-area: pedido;
 }
 
 .resumen-menu,
 .pedido {
-    border: 1px solid var(--color-borde);
-    background-color: var(--color-blanco);
+  border: 1px solid #E8DED1;
+  background-color: #FFFFFF;
 }
 
-/* 8. Menú: grilla de hamburguesas */
-.menu-flex {
-    display: grid;
-    grid-template-areas:
-        "clasica"
-        "bacon"
-        "completa";
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    align-items: stretch;
+.seccion-menu .menu-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.seccion-menu .card {
+  flex: 1 1 260px;
+  max-width: 340px;
+  overflow: hidden;
+  color: #292522;
+  background-color: #F5EFE6;
+  border: 1px solid #D97736;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.seccion-menu .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(36, 32, 30, 0.2);
+}
+.seccion-menu .card:focus-within {
+  outline: 2px solid #D97736;
+  outline-offset: 3px;
+}
+.seccion-menu .card figure {
+  margin: 0;
+}
+.seccion-menu .card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.seccion-menu .card-body {
+  padding: 20px;
+}
+.seccion-menu .card-title {
+  color: #D97736;
+}
+.seccion-menu .precio {
+  font-weight: 700;
 }
 
-.menu-flex article {
-    width: 100%;
-    min-width: 0;
-}
-
-.hamburguesa-clasica {
-    grid-area: clasica;
-}
-
-.hamburguesa-bacon {
-    grid-area: bacon;
-}
-
-.hamburguesa-completa {
-    grid-area: completa;
-}
-
-.menu-flex figure {
-    gap: 12px;
-}
-
-.menu-flex article img {
-    width: 100%;
-    max-width: 420px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* 9. Adaptación a celulares */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.7rem;
-    }
-
-    header {
-        justify-content: center;
-        text-align: center;
-    }
-
-    main {
-        width: 92%;
-        padding: 24px 0;
-    }
-
-    article {
-        padding: 16px;
-    }
-
-    .menu-flex {
-        gap: 20px;
-    }
-
-    .menu-flex article img {
-        height: 220px;
-    }
+  .menu-flex {
+    gap: 20px;
+  }
+  .menu-flex article img {
+    height: 220px;
+  }
 }
-
-/* 10. Escritorio: desde 1024 px */
 @media (min-width: 1024px) {
-    .home-grid {
-        grid-template-areas:
-            "bienvenida bienvenida"
-            "resumen pedido";
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px;
-        padding: 40px 0;
-    }
-
-    .menu-flex {
-        grid-template-areas:
-            "clasica bacon completa";
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  .home-grid {
+    grid-template-areas: "bienvenida bienvenida" "resumen pedido";
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    padding: 40px 0;
+  }
+  .menu-flex {
+    grid-template-areas: "clasica bacon completa";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
-/* Colores de la navbar de Chingu Burger */
-.navbar .navbar-brand,
-.navbar .nav-link {
-    color: #eeebea;
-    transition: color 0.3s ease;
-}
-
-/* Cuando pasamos el mouse */
-.navbar .navbar-brand:hover,
-.navbar .nav-link:hover {
-    color: #ee650a;
-}
-
-/* Cuando seleccionamos un enlace con el teclado */
-.navbar .navbar-brand:focus,
-.navbar .nav-link:focus {
-    color: #FFFFFF;
-    outline: 2px solid #D97736;
-    outline-offset: 3px;
-}
-
-/* Mientras hacemos clic */
-.navbar .nav-link:active {
-    color: #D97736;
-}
-/* Galería de hamburguesas */
 .galeria {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
 }
-
 .galeria h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--color-acento);
+  margin-bottom: 20px;
+  text-align: center;
+  color: #D97736;
 }
-
 .galeria .carousel-item img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: filter 0.3s ease;
 }
-
+.galeria .carousel-item img:hover {
+  filter: brightness(0.9);
+}
 .galeria .carousel-caption h3 {
-    display: inline-block;
-    padding: 8px 16px;
-    color: #FFFFFF;
-    background-color: rgba(36, 32, 30, 0.85);
-    border-radius: 6px;
+  display: inline-block;
+  padding: 8px 16px;
+  color: #FFFFFF;
+  background-color: rgba(36, 32, 30, 0.85);
+  border-radius: 6px;
+}
+.galeria .carousel-control-prev:focus-visible,
+.galeria .carousel-control-next:focus-visible {
+  outline: 2px solid #D97736;
+  outline-offset: -4px;
 }
 
 @media (max-width: 576px) {
-    .galeria {
-        padding: 12px;
-    }
-
-    .galeria .carousel-item img {
-        height: 260px;
-    }
-}
-/* Tarjetas Bootstrap del menú */
-.seccion-menu .menu-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-}
-
-.seccion-menu .card {
-    flex: 1 1 260px;
-    max-width: 340px;
-    overflow: hidden;
-    color: var(--color-texto);
-    background-color: var(--color-secundario);
-    border: 1px solid var(--color-acento);
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.seccion-menu .card figure {
-    margin: 0;
-}
-
-.seccion-menu .card-img-top {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.seccion-menu .card-body {
-    padding: 20px;
-}
-
-.seccion-menu .card-title {
-    color: var(--color-acento);
-}
-
-.seccion-menu .precio {
-    font-weight: 700;
-}
-
-/* Estados interactivos de las tarjetas */
-.seccion-menu .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(36, 32, 30, 0.2);
-}
-
-.seccion-menu .card:focus-within {
-    outline: 2px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-/* Botones con los colores de Chingu Burger */
-.btn-chingu {
-    color: #FFFFFF;
-    background-color: var(--color-acento);
-    border: 1px solid var(--color-acento);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-chingu:hover,
-.btn-chingu:focus {
-    color: var(--color-acento);
-    background-color: var(--color-primario);
-    border-color: var(--color-acento);
-}
-
-.btn-chingu:focus-visible {
-    outline: 2px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-.btn-chingu:active {
-    color: var(--color-primario) !important;
-    background-color: var(--color-secundario) !important;
-    border-color: var(--color-acento) !important;
-}
-/* Estados interactivos generales de Chingu Burger */
-a {
-    transition: color 0.3s ease, background-color 0.3s ease,
-                border-color 0.3s ease;
-}
-
-a:hover {
-    color: var(--color-acento);
-}
-
-a:focus-visible {
-    outline: 2px solid var(--color-acento);
-    outline-offset: 3px;
-}
-
-/* Enlaces de navegación */
-.navbar .nav-link:active,
-.navbar .navbar-brand:active {
-    color: var(--color-acento);
-}
-
-/* Imágenes del carrusel */
-.galeria .carousel-item img {
-    transition: filter 0.3s ease;
-}
-
-.galeria .carousel-item img:hover {
-    filter: brightness(0.9);
-}
-
-/* Controles del carrusel al usar teclado */
-.galeria .carousel-control-prev:focus-visible,
-.galeria .carousel-control-next:focus-visible {
-    outline: 2px solid var(--color-acento);
-    outline-offset: -4px;
+  .galeria {
+    padding: 12px;
+  }
+  .galeria .carousel-item img {
+    height: 260px;
+  }
 }
