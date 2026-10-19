@@ -1,0 +1,41 @@
+﻿@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.btn {
+  border-radius: $radio-borde;
+  font-family: $fuente-cuerpo;
+  font-weight: 700;
+  transition: background-color $transicion, color $transicion,
+    border-color $transicion, transform $transicion;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    @include foco-visible;
+  }
+}
+
+.btn-chingu {
+  color: $color-blanco;
+  background-color: $color-acento;
+  border-color: $color-acento;
+
+  &:hover,
+  &:focus {
+    color: $color-acento;
+    background-color: $color-primario;
+    border-color: $color-acento;
+  }
+
+  &:active {
+    color: $color-primario;
+    background-color: $color-secundario;
+    border-color: $color-acento;
+  }
+}

@@ -1,0 +1,52 @@
+﻿@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navbar {
+  background-color: $color-primario;
+  padding: 12px 5%;
+
+  .navbar-brand {
+    color: $color-blanco;
+    font-family: $fuente-titulos;
+    font-size: 1.5rem;
+
+    &:hover,
+    &:focus {
+      color: $color-acento;
+    }
+  }
+
+  .navbar-nav {
+    gap: 8px;
+  }
+
+  .nav-link {
+    color: $color-nav-texto;
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: color $transicion, background-color $transicion;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-nav-hover;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    &.active {
+      color: $color-acento;
+      font-weight: 700;
+    }
+
+    &:active {
+      color: $color-acento;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $color-borde;
+
+    &:focus-visible {
+      @include foco-visible;
+    }
+  }
+}

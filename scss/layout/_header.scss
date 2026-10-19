@@ -1,0 +1,17 @@
+﻿@use "../utilities/variables" as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 5%;
+  background-color: $color-primario;
+  color: $color-blanco;
+
+  h1 {
+    margin: 0;
+    color: $color-blanco;
+  }
+}

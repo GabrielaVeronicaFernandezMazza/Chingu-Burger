@@ -1,0 +1,108 @@
+﻿@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-secundario;
+  color: $color-texto;
+  font-family: $fuente-cuerpo;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+main {
+  @include flex-columna(36px);
+  width: min($ancho-contenido, 90%);
+  margin: 0 auto;
+  padding: 32px 0;
+
+  section {
+    @include flex-columna;
+    min-width: 0;
+  }
+
+  a {
+    color: $color-titulo-terciario;
+    font-weight: 700;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $color-primario;
+    }
+
+    &:focus-visible {
+      @include foco-visible;
+    }
+
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}
+
+article {
+  @include flex-columna;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid $color-borde;
+  border-radius: $radio-tarjeta;
+  background-color: $color-blanco;
+  box-shadow: 0 4px 12px rgba(36, 32, 30, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(36, 32, 30, 0.14);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+figure {
+  @include flex-columna(8px);
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: $radio-borde;
+  }
+}
+
+figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+button:focus-visible {
+  @include foco-visible;
+}
+
+button:active {
+  opacity: 0.75;
+}
+
+a {
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    color: $color-acento;
+  }
+
+  &:focus-visible {
+    @include foco-visible;
+  }
+}

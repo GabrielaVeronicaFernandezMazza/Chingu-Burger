@@ -1,0 +1,174 @@
+﻿@use "../utilities/variables" as *;
+
+.menu-flex {
+  display: grid;
+  grid-template-areas:
+    "clasica"
+    "bacon"
+    "completa";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+
+  article {
+    width: 100%;
+    min-width: 0;
+  }
+
+  figure {
+    gap: 12px;
+  }
+
+  article img {
+    width: 100%;
+    max-width: 420px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.hamburguesa-clasica {
+  grid-area: clasica;
+}
+
+.hamburguesa-bacon {
+  grid-area: bacon;
+}
+
+.hamburguesa-completa {
+  grid-area: completa;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-areas:
+    "bienvenida"
+    "resumen"
+    "pedido";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 24px 0;
+
+  > section {
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+
+.bienvenida {
+  grid-area: bienvenida;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+
+  p {
+    max-width: 700px;
+  }
+
+  figure {
+    max-width: 600px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.resumen-menu {
+  grid-area: resumen;
+}
+
+.pedido {
+  grid-area: pedido;
+}
+
+.resumen-menu,
+.pedido {
+  border: 1px solid $color-borde;
+  background-color: $color-blanco;
+}
+
+.seccion-menu {
+  .menu-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .card {
+    flex: 1 1 260px;
+    max-width: 340px;
+    overflow: hidden;
+    color: $color-texto;
+    background-color: $color-secundario;
+    border: 1px solid $color-acento;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(36, 32, 30, 0.2);
+    }
+
+    &:focus-within {
+      outline: 2px solid $color-acento;
+      outline-offset: 3px;
+    }
+
+    figure {
+      margin: 0;
+    }
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    color: $color-acento;
+  }
+
+  .precio {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-flex {
+    gap: 20px;
+  }
+
+  .menu-flex article img {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-grid {
+    grid-template-areas:
+      "bienvenida bienvenida"
+      "resumen pedido";
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    padding: 40px 0;
+  }
+
+  .menu-flex {
+    grid-template-areas: "clasica bacon completa";
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
