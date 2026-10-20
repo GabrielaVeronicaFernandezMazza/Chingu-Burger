@@ -134,7 +134,7 @@ a:not(.nav-link):not(.navbar-brand) {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 a:not(.nav-link):not(.navbar-brand):hover {
-  color: #D97736;
+  color: #A84716;
 }
 a:not(.nav-link):not(.navbar-brand):focus-visible {
   outline: 2px solid #D97736;
@@ -176,8 +176,8 @@ header h1 {
   padding: 10px 12px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background-color: #D97736;
-  color: #FFFFFF;
+  background-color: #A84716;
+color: #FFFFFF;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
@@ -200,8 +200,8 @@ header h1 {
   padding: 10px 12px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background-color: #D97736;
-  color: #FFFFFF;
+ background-color: #A84716;
+color: #FFFFFF;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
@@ -251,7 +251,7 @@ footer a {
   transition: color 0.3s ease;
 }
 footer a:hover {
-  color: #D97736;
+  color: #F5EFE6;
 }
 footer a:focus-visible {
   outline: 2px solid #D97736;
@@ -280,12 +280,12 @@ footer a:focus-visible {
 
 .btn-chingu {
   color: #FFFFFF;
-  background-color: #D97736;
-  border: 1px solid #D97736;
+  background-color: #A84716;
+  border: 1px solid #A84716;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 .btn-chingu:hover, .btn-chingu:focus {
-  color: #D97736;
+ color: #F5EFE6;
   background-color: #24201E;
   border-color: #D97736;
 }
@@ -305,8 +305,8 @@ footer a:focus-visible {
   padding: 10px 18px;
   border: 1px solid #D97736;
   border-radius: 12px;
-  background-color: #D97736;
-  color: #FFFFFF;
+  background-color: #A84716;
+color: #FFFFFF;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -316,7 +316,7 @@ footer a:focus-visible {
 .resumen-menu a:hover,
 .pedido a:hover {
   background-color: #24201E;
-  color: #D97736;
+  color: #F5EFE6;
   border-color: #D97736;
   transform: translateY(-2px);
 }
@@ -328,7 +328,7 @@ footer a:focus-visible {
 }
 
 .resumen-menu a:active,
-.pedido a:active {
+.pedido a:bacactive {
   background-color: #F5EFE6;
   color: #24201E;
   transform: scale(0.98);
@@ -455,7 +455,7 @@ footer a:focus-visible {
   padding: 20px;
 }
 .seccion-menu .card-title {
-  color: #D97736;
+  color: #A84716;
 }
 .seccion-menu .precio {
   font-weight: 700;
@@ -486,7 +486,7 @@ footer a:focus-visible {
 .galeria h2 {
   margin-bottom: 20px;
   text-align: center;
-  color: #D97736;
+   color: #A84716;
 }
 .galeria .carousel-item img {
   width: 100%;
