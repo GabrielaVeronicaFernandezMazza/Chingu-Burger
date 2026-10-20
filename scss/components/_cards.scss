@@ -1,12 +1,11 @@
-﻿@use "../utilities/variables" as *;
 
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Tarjetas del menú
 .menu-flex {
   display: grid;
-  grid-template-areas:
-    "clasica"
-    "bacon"
-    "completa";
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 24px;
   align-items: stretch;
 
@@ -15,31 +14,31 @@
     min-width: 0;
   }
 
-  figure {
-    gap: 12px;
-  }
-
-  article img {
+  img {
     width: 100%;
-    max-width: 420px;
+    max-width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: $radio-borde;
+  }
+
+  h2,
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 12px;
   }
 }
 
-.hamburguesa-clasica {
-  grid-area: clasica;
-}
-
-.hamburguesa-bacon {
-  grid-area: bacon;
-}
-
+.hamburguesa-clasica,
+.hamburguesa-bacon,
 .hamburguesa-completa {
-  grid-area: completa;
+  min-width: 0;
 }
 
+// Diseño de la página de inicio
 .home-grid {
   display: grid;
   grid-template-areas:
@@ -47,8 +46,9 @@
     "resumen"
     "pedido";
   grid-template-columns: minmax(0, 1fr);
-  gap: 24px;
-  width: min(1100px, 92%);
+  gap: 30px;
+  width: 92%;
+  max-width: $ancho-contenido;
   margin: 0 auto;
   padding: 24px 0;
 
@@ -56,7 +56,7 @@
     min-width: 0;
     margin: 0;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: $radio-tarjeta;
   }
 }
 
@@ -95,32 +95,28 @@
   background-color: $color-blanco;
 }
 
+// Tarjetas Bootstrap del menú
 .seccion-menu {
   .menu-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-  }
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
   .card {
-    flex: 1 1 260px;
-    max-width: 340px;
+  flex: 1 1 260px;
+  max-width: 340px;
+    height: 100%;
     overflow: hidden;
     color: $color-texto;
     background-color: $color-secundario;
     border: 1px solid $color-acento;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: $radio-tarjeta;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(36, 32, 30, 0.2);
-    }
+    @include efecto-interactivo(-5px, 0.3s);
 
     &:focus-within {
-      outline: 2px solid $color-acento;
-      outline-offset: 3px;
+      @include foco-visible;
     }
 
     figure {
@@ -147,16 +143,22 @@
   }
 }
 
-@media (max-width: 600px) {
-  .menu-flex {
-    gap: 20px;
+// Tablets
+@media (min-width: 768px) {
+  .home-grid {
+    grid-template-areas:
+      "bienvenida"
+      "resumen"
+      "pedido";
+    gap: 28px;
   }
 
-  .menu-flex article img {
-    height: 220px;
+  .seccion-menu .menu-flex {
+    gap: 24px;
   }
 }
 
+// Escritorio
 @media (min-width: 1024px) {
   .home-grid {
     grid-template-areas:
@@ -167,8 +169,5 @@
     padding: 40px 0;
   }
 
-  .menu-flex {
-    grid-template-areas: "clasica bacon completa";
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  
 }

@@ -1,5 +1,5 @@
-﻿@use "../utilities/variables" as *;
-
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 .galeria {
   max-width: 900px;
   margin: 40px auto;

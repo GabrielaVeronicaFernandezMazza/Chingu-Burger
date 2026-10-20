@@ -1,12 +1,33 @@
-﻿@use "variables" as *;
 
-@mixin foco-visible($color: $color-acento) {
-  outline: 2px solid $color;
-  outline-offset: 3px;
-}
+@use "variables" as *;
 
+// Organiza elementos en columna con espacio configurable.
 @mixin flex-columna($espacio: 16px) {
   display: flex;
   flex-direction: column;
   gap: $espacio;
+}
+
+// Estilo visible para navegación con teclado.
+@mixin foco-visible {
+  outline: 2px solid $color-acento;
+  outline-offset: 3px;
+}
+
+// Efecto interactivo reutilizable con parámetros.
+@mixin efecto-interactivo(
+  $movimiento: -4px,
+  $duracion: 0.3s,
+  $sombra: 0 8px 18px rgba(36, 32, 30, 0.2)
+) {
+  transition: transform $duracion ease, box-shadow $duracion ease;
+
+  &:hover {
+    transform: translateY($movimiento);
+    box-shadow: $sombra;
+  }
+
+  &:focus-visible {
+    @include foco-visible;
+  }
 }

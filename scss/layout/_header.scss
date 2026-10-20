@@ -1,4 +1,4 @@
-﻿@use "../utilities/variables" as *;
+@use "../utilities/variables" as *;
 
 header {
   display: flex;
@@ -15,3 +15,11 @@ header {
     color: $color-blanco;
   }
 }
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+

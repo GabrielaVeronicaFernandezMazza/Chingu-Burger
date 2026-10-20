@@ -1,52 +1,77 @@
-﻿@use "../utilities/variables" as *;
+
+@use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-.navbar {
-  background-color: $color-primario;
-  padding: 12px 5%;
+.navbar .navbar-brand {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: $color-acento;
+  color: $color-blanco;
+  text-decoration: none;
+  transition:
+    background-color $transicion,
+    color $transicion,
+    transform $transicion;
 
-  .navbar-brand {
+  &:hover {
+    background-color: $color-secundario;
+    color: $color-primario;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
     color: $color-blanco;
-    font-family: $fuente-titulos;
-    font-size: 1.5rem;
-
-    &:hover,
-    &:focus {
-      color: $color-acento;
-    }
+    @include foco-visible;
   }
 
-  .navbar-nav {
-    gap: 8px;
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+
+
+.navbar .nav-link {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: $color-acento;
+  color: $color-blanco;
+  text-decoration: none;
+  transition: background-color $transicion, color $transicion,
+    transform $transicion;
+
+  &:hover {
+    background-color: $color-secundario;
+    color: $color-primario;
+    transform: translateY(-2px);
   }
 
-  .nav-link {
-    color: $color-nav-texto;
-    border-radius: 6px;
-    padding: 8px 12px;
-    transition: color $transicion, background-color $transicion;
-
-    &:hover,
-    &:focus-visible {
-      color: $color-nav-hover;
-      background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    &.active {
-      color: $color-acento;
-      font-weight: 700;
-    }
-
-    &:active {
-      color: $color-acento;
-    }
+  &:focus-visible {
+    color: $color-blanco;
+    @include foco-visible;
   }
 
-  .navbar-toggler {
-    border-color: $color-borde;
+  &:active {
+    transform: scale(0.96);
+  }
 
-    &:focus-visible {
-      @include foco-visible;
-    }
+  &.active {
+    font-weight: 700;
+  }
+}
+
+.navbar-nav {
+  gap: 8px;
+}
+
+.navbar-toggler {
+  border-color: $color-borde;
+
+  &:focus-visible {
+    @include foco-visible;
   }
 }
