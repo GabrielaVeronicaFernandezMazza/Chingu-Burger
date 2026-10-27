@@ -119,3 +119,26 @@ a:not(.nav-link):not(.navbar-brand) {
   }
 }
 
+/* Animación nativa de entrada */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body > header {
+  animation: aparecer 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > header {
+    animation: none;
+  }
+}
+
