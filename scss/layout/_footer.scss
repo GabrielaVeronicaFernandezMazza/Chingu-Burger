@@ -1,4 +1,6 @@
-@use "../utilities/variables" as *;  @use "../utilities/mixins" as *;
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
 footer {
   display: flex;
   flex-direction: column;
