@@ -45,7 +45,8 @@ npx.cmd sass .\scss\main.scss .\styles\styles.css --no-source-map
 ## Enlaces
 
 - **Repositorio:** https://github.com/GabrielaVeronicaFernandezMazza/Chingu-Burger
-- **Sitio publicado:** https://gabrielaveronicafernandezmazza.github.io/Chingu-Burger/
+- **Sitio publicado en Vercel:** https://chingu-burger.vercel.app/
+- **GitHub Pages:** https://gabrielaveronicafernandezmazza.github.io/Chingu-Burger/
 
 ## Autoría
 
